@@ -27,6 +27,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vmware.vmx["unity.showBadges"] = "FALSE"
     vmware.vmx["unity.showBorders"] = "FALSE"
     vmware.vmx["unity.wasCapable"] = "FALSE"
+
+    # Memory:
+    vmware.vmx["memsize"] = "1024"
+    vmware.vmx["numvcpus"] = "1"
+
   end
 
   config.vm.network "private_network", ip: "172.16.2.137"

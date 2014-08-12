@@ -78,16 +78,20 @@ gem install bundler
 
 mkdir /opt/hanlon
 cd /opt/hanlon
-git clone https://github.com/csc/Hanlon.git .
+git clone https://github.com/bunchc/Hanlon.git .
 bundle install
 
 /opt/hanlon/hanlon_init
 
-#rackup -s puma /opt/hanlon/web/config.ru &
+cd /opt/hanlon/web
+rackup -s puma /opt/hanlon/web/config.ru &
 
-###
-#cd /tmp
-#wget https://github.com/csc/Hanlon-Microkernel/releases/download/v1.0/hnl_mk_debug-image.1.0.iso
-#
-#cd /opt/hanlon/
-#/opt/hanlon/cli/hanlon image add -t mk -p /tmp/hnl_mk_debug-image.1.0.iso
+# Get some ISOs
+cd /tmp
+wget https://github.com/csc/Hanlon-Microkernel/releases/download/v1.0/hnl_mk_debug-image.1.0.iso
+wget http://mirror.anl.gov/pub/ubuntu-iso/CDs/trusty/ubuntu-14.04.1-server-amd64.iso
+
+# Add the things to Hanlon
+cd /opt/hanlon/
+/opt/hanlon/cli/hanlon image add -t mk -p /tmp/hnl_mk_debug-image.1.0.iso
+/opt/hanlon/cli/hanlon image add -t os -p /tmp/ubuntu-14.04.1-server-amd64.iso
