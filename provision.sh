@@ -84,7 +84,7 @@ bundle install
 /opt/hanlon/hanlon_init
 
 cd /opt/hanlon/web
-rackup -s puma /opt/hanlon/web/config.ru &
+./run-puma.sh &
 
 # Get some ISOs
 cd /tmp
@@ -94,4 +94,4 @@ wget http://mirror.anl.gov/pub/ubuntu-iso/CDs/trusty/ubuntu-14.04.1-server-amd64
 # Add the things to Hanlon
 cd /opt/hanlon/
 /opt/hanlon/cli/hanlon image add -t mk -p /tmp/hnl_mk_debug-image.1.0.iso
-/opt/hanlon/cli/hanlon image add -t os -p /tmp/ubuntu-14.04.1-server-amd64.iso
+#/opt/hanlon/cli/hanlon image add -t os -p /tmp/ubuntu-14.04.1-server-amd64.iso
