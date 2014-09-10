@@ -91,8 +91,10 @@ sleep 5
 cd /tmp
 wget https://github.com/csc/Hanlon-Microkernel/releases/download/v1.0/hnl_mk_debug-image.1.0.iso
 wget http://mirror.anl.gov/pub/ubuntu-iso/CDs/trusty/ubuntu-14.04.1-server-amd64.iso
+wget http://mirror.anl.gov/pub/centos/6.5/isos/x86_64/CentOS-6.5-x86_64-LiveCD.iso
 
 # Add the things to Hanlon
 cd /opt/hanlon/
 /opt/hanlon/cli/hanlon image add -t mk -p /tmp/hnl_mk_debug-image.1.0.iso
 /opt/hanlon/cli/hanlon image add -t os -p /tmp/ubuntu-14.04.1-server-amd64.iso -n ubuntu-14.04 -v 14.04
+/opt/hanlon/cli/hanlon image add -t os -p /tmp/CentOS-6.5-x86_64-LiveCD.iso -n CentOS6 -v 6.5
