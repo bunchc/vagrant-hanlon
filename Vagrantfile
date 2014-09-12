@@ -52,6 +52,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         if prefix == "node"
           box.vm.box = "razor_node"
           box.vm.box_url = "http://openstack.prov12n.com/files/razor_node.box"
+          box.vm.provider "vmware_fusion" do |v|
+            v.gui = true
+          end
         else
           box.vm.network "private_network", ip: "172.16.2.137"
           box.vm.provision :shell, path: "provision.sh"
